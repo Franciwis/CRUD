@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/estilos.css" />
     <title>CRUD</title>
 </head>
+
 <body>
-    
+    <header>
+        <nav>
+            <div>este es el navegador del header</div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div>
+                <h1>creando CRUD</h1>
+            </div>
+            <div>
+                <form id="formMusic">
+                    <input id="titulo" type="text" name="titulo_cancion" placeholder="nombre de la canción" />
+                    <input id="artista" type="text" name="nombre_artista" placeholder="artista" />
+                    <button id="btnAgregar" type="submit">Agregar</button>
+                </form>
+            </div>
+            <div>
+                <h2>Música seleccionada:</h2>
+
+                <ul id="list">
+                    <li>mañana será bonito, Karol G</li>
+                    <br>
+
+                    <p>hola</p>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>esto es el pie de página</p>
+    </footer>
+    <script src="./js/app.js"></script>
 </body>
+
 </html>
