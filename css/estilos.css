@@ -172,3 +172,20 @@ td {
     
 }
 
+section{
+    padding-bottom: 50px;
+}
+
+.footer {
+    padding-top: 30px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .footer {
+      font-size: 14px;
+    }
+  }
