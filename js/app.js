@@ -1,5 +1,5 @@
 
-//funcion para agregar canción si se cumple la validacin del formulario   
+//funcion para validar el formulario  
 function validarFormulario() {
     // e.preventDefault();    //no se esta usando
     let artista = document.getElementById("artista").value;
@@ -42,10 +42,6 @@ function agregarCancion() {
         localStorage.setItem("listaMusic", JSON.stringify(listaMusic));
 
         mostrarMusic();
-        // document.getElementById("artista").value = ""
-        // document.getElementById("titulo").value = ""
-
-
 
     }
 
@@ -104,16 +100,18 @@ function modificarForm(index) {
     let formMod = document.getElementById("contFormMusic");
     let h1Mod = document.getElementById("h1Tittle");
 
-    if (formMod.className === "modForm") {
+    //se valida si el formulario ya fue modificado por la funcion anteioermente, evita que aparesca repedidas veces el boton "Cancelar"
+    if (formMod.className === "formModif") {
         titulomod.setAttribute("value", listaMusic[indice].titulo);
         artistamod.setAttribute("value", listaMusic[indice].artista);
         btnModificar.setAttribute("onclick", "editarLista(" + indice + ")");
     } else {
-        //FRAN
+        
         let btnCancelar = document.createElement("button");
         btnCancelar.innerHTML = "Cancelar";
         btnCancelar.setAttribute("class", "botonCan");
-        btnCancelar.setAttribute("onclick", "mostrarMusic()");
+        // btnCancelar.setAttribute("onclick", "mostrarMusic()");
+        btnCancelar.setAttribute("onclick", "location.reload()");
 
         h1Mod.innerHTML = "Modificar Musica"
         titulomod.setAttribute("value", listaMusic[indice].titulo);
@@ -176,10 +174,27 @@ function eliminarLista(index) {
 
     localStorage.setItem("listaMusic", JSON.stringify(listaMusic));
 
-
-    document.onload = mostrarMusic();
+    location.reload()
+    // document.onload = mostrarMusic();
 
     }
+
+}
+
+
+//funcion creada solo en caso de requerir limpiar todo el formulario, no se estaria usando
+function limpiarTodo(){
+
+    let listaMusic;
+    listaMusic = JSON.parse(localStorage.getItem("listaMusic"));
+   
+
+    listaMusic.splice(0, 99);
+
+    localStorage.setItem("listaMusic", JSON.stringify(listaMusic));
+
+    location.reload()
+    
 
 }
 

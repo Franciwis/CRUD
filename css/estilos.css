@@ -1,3 +1,16 @@
+
+.miNav a{
+    color: #553c9a;
+    font-size: 20px;
+}
+
+.miNav a:hover{
+    color: #8f70e3;
+    transform:scale(1.1)
+    
+}
+
+
 div{
     display: flex;
     justify-content: center;
@@ -11,24 +24,21 @@ input[type=text] {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    
   }
 
 td, th{
-    width: 45%;
+    width: 43%;
     /* text-align:justify; */
     height: 20px;
     vertical-align:middle;
 }
 
 table {
-    width: 90%;
+    width: 80%;
   }
 
-  /* .contBoton{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  } */
+  
 
 th {
 
@@ -48,65 +58,93 @@ td {
   tr:nth-child(even) {background-color: #c0eff5;}
 
 .boton {
+    width: 50%;
     background-color: #4CAF50; 
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding: 8px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 15px;
     border-radius: 10px;
+
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .botonDel {
+    width: 50%;
     background-color: #dd2810; 
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding: 8px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    border-radius: 5px;
+    font-size: 15px;
+    border-radius: 10px;
+
+
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .botonCan {
+    width: 40%;
+    padding: auto;
     background-color: #e7ae12; 
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding: 8px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    border-radius: 5px;
+    font-size: 15px;
+    border-radius: 10px;
+
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .botonCan:hover{
     background-color: #ad830f;
-    font-size: 15px;
+    font-size: 13px;
   }
 
+  .blockTitulo{
+    padding-top: 2% ;
+  }
+
+  .conth2{
+    padding-top: 2% ;
+    padding-bottom: auto;
+  }
 
 
    .boton:hover {
     background-color: #2d682e;
-    font-size: 15px;
+    font-size: 13px;
     
   }
 
   .botonDel:hover {
     background-color: #811709;
-    font-size: 15px;
+    font-size: 13px;
     
   }
 
 
 
 
-h1{
-
+.blockTitulo h1{
+    padding-bottom: 1%;
     font-size: 70px;
     font-weight: 600;
     background-image: linear-gradient(to right, #553c9a 45%, #ee4b2b);
@@ -122,8 +160,8 @@ h1{
     width: 100%;
 }
 
-h2{
-    
+.conth2 h2{
+    padding-bottom: 1%;
     font-size: 70px;
     font-weight: 600;
     background-image: radial-gradient(circle, #553c9a, #ee4b2b);
@@ -132,6 +170,5 @@ h2{
     background-clip: text;
     -webkit-background-clip: text;
     
-    
-
 }
+

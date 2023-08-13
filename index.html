@@ -4,19 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/estilos.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>CRUD</title>
   </head>
 
   <body>
     <header>
-      <nav>
-        <div>este es el navegador del header</div>
-      </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light miNav">
+            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Inicio <span class="sr-only"></span></a>
+                <a class="nav-item nav-link" href="#agregar_musica">Agregar Música</a>
+                <a class="nav-item nav-link" href="#ista_canciones">Lista de Canciones</a>
+                <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
+              </div>
+            </div>
+          </nav>
     </header>
     <main>
       <section style="overflow-x: auto">
-        <div>
-          <h1 id="h1Tittle">Agregar Musica</h1>
+        <div class="blockTitulo">
+          <h1  class="agregar_musica" id="h1Tittle">Agregar Música</h1>
         </div>
         <div id="contFormMusic" class="contForm">
           <form class="formMusic" id="formMusic">
@@ -34,7 +46,7 @@
         </div>
         
           <div class="conth2">
-            <h2>Lista canciones:</h2>
+            <h2 class="lista_canciones">Lista canciones:</h2>
           </div>
 
           <div class="contenedorLista">
@@ -43,9 +55,7 @@
         
       </section>
     </main>
-    <footer>
-      <p>esto es el pie de página</p>
-    </footer>
+    
     <script src="./js/app.js"></script>
   </body>
 </html>
