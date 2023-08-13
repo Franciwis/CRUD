@@ -38,11 +38,12 @@ function agregarCancion() {
             titulo: titulo
 
         });
+
         localStorage.setItem("listaMusic", JSON.stringify(listaMusic));
 
         mostrarMusic();
-        document.getElementById("artista").value = ""
-        document.getElementById("titulo").value = ""
+        // document.getElementById("artista").value = ""
+        // document.getElementById("titulo").value = ""
 
 
 
@@ -60,14 +61,33 @@ function mostrarMusic() {
     } else {
         listaMusic = JSON.parse(localStorage.getItem("listaMusic"))
     }
-    let li = "";
+    let tform = "";
+
+    tform += "<tr>";
+    tform += "<th>" + "Titulo" + "</th>";
+    tform += "<th>" + "Artista" + "</th>";
+    tform += "<th>" + "Opciones" + "</th>";
+    tform += "</tr>";
+
     listaMusic.forEach(function (element, index) {
-        li += "<ul>";
-        li += "<li>" + element.titulo + " - " + element.artista + " <button class='editar' onclick=modificarForm(" + index + ") data-index = " + index + ">Editar</button>" + "<button class='eliminar' onclick = eliminarLista(" + index + ") index =" + index + ">eliminar</button>";
-        li += "</ul>";
+        var editButton = document.createElement("button");
+        editButton.innerHTML = "Editar";
+
+        tform += "<tr>";
+        tform += "<td>" + element.titulo + "</td>";
+        tform += "<td>" + element.artista + "</td>";
+        tform += "<td class='contBoton'>";
+        //el codigo de abajo crear los botones y se les entrega el atributo onclick con la funcion a ejecutar, junto con la funcion se especifica el indice
+        tform += "<button class='boton' onclick=modificarForm(" + index + ") >Editar</button>" + "<button class='botonDel' onclick=eliminarLista(" + index + ") data-index='" + index + "'>Eliminar</button>";
+        tform += "</td>";
+        tform += "</tr>";
 
     });
-    document.querySelector("#contenedorLista").innerHTML = li;
+
+
+
+    document.querySelector("#contenedorTable").innerHTML = tform;
+
 
 }
 
@@ -81,7 +101,7 @@ function modificarForm(index) {
     let btnModificar = document.getElementById("btnAgregar");
     let titulomod = document.getElementById("titulo");
     let artistamod = document.getElementById("artista");
-    let formMod = document.getElementById("formMusic");
+    let formMod = document.getElementById("contFormMusic");
     let h1Mod = document.getElementById("h1Tittle");
 
     if (formMod.className === "modForm") {
@@ -89,19 +109,21 @@ function modificarForm(index) {
         artistamod.setAttribute("value", listaMusic[indice].artista);
         btnModificar.setAttribute("onclick", "editarLista(" + indice + ")");
     } else {
-
+        //FRAN
         let btnCancelar = document.createElement("button");
-        h1Mod.innerHTML = "Modificando Música";
+        btnCancelar.innerHTML = "Cancelar";
+        btnCancelar.setAttribute("class", "botonCan");
+        btnCancelar.setAttribute("onclick", "mostrarMusic()");
+
+        h1Mod.innerHTML = "Modificar Musica"
         titulomod.setAttribute("value", listaMusic[indice].titulo);
         artistamod.setAttribute("value", listaMusic[indice].artista);
 
-        formMod.setAttribute("class", "modForm");
-
-        btnCancelar.setAttribute("class", "btnCan");
-        btnCancelar.innerHTML = "Cancelar";
+        formMod.setAttribute("class", "formModif");
 
         btnModificar.setAttribute("onclick", "editarLista(" + indice + ")");
         btnModificar.innerHTML = "Modificar";
+        
 
         document.querySelector("#formMusic").appendChild(btnCancelar);
     }
